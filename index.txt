@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case3Pemweb</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style type="text/css">
+        #alert,#register-box,#forgot-box{
+            display: none; 
+        }
+    </style>
+</head>
+<body class= "bg-dark">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4" id="alert">
+                <div class="alert alert-success">
+                    <strong id="alert">Case 3</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="login-box">
+                <h2 class="text-center mt-2">Please Login</h2>
+                <form action="" method="post" role="form" class="p-2" id="login-form">
+                    <div class="form-group mt-2">
+                        <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group mt-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="rem" class="custom-control-input" id="customCheck">
+                            <label for="customCheck" class="custom-control-label">Remember Me</label>
+                            <a href="#" id="forgot-btn" style="float: right;">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="submit" name="login" id="login" value="Login" class="btn btn-primary btn-block form-control">
+                    </div>
+                    <div class="form-group mt-2">
+                        <p class="text-center">New User? <a href="#" id="register-btn">Register Here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Form -->
+
+    <div class="row">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="register-box">
+                <h2 class="text-center mt-2">Register</h2>
+                <form action="" method="post" role="form" class="p-2" id="register-form">
+                    <div class="form-group mt-2">
+                        <input type="text" name="name" class="form-control" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="text" name="uname" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="password" name="pass" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="password" name="cpass" class="form-control" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="form-group mt-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="rem" class="custom-control-input" id="customCheck2">
+                            <label for="customCheck2" class="custom-control-label">I agree to the <a href="#">Terms & Conditions.</a></label>
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="submit" name="register" id="register" value="Register" class="btn btn-primary btn-block form-control">
+                    </div>
+                    <div class="form-group mt-2">
+                        <p class="text-center">Have an account? <a href="#" id="login-btn">Login Here.</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Forgot Password -->
+
+            <div class="row">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="forgot-box">
+                <h2 class="text-center mt-2">Reset Password</h2>
+                <form action="" method="post" role="form" class="p-2" id="forgot-form">
+                    <div class="form-group mt-2">
+                        <small class="text-muted">
+                            Untuk reset password, Masukkan email untuk pengiriman instruksi reset.
+                        </small>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="email" name="femail" class="form-control" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="submit" name="forgot" id="forgot" value="Reset" class="btn btn-primary btn-block form-control">
+                    </div>
+                    <div class="form-group mt-2 text-center">
+                        <a href="#" id="back-btn">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $("#login-btn").click(function(){
+                $("#register-box").hide();
+                $("#login-box").show();
+            });
+            $("#back-btn").click(function(){
+                $("#forgot-box").hide();
+                $("#login-box").show();
+            });
+        });
+    </script>
+</body>
+</html>
