@@ -16,7 +16,7 @@
 <?php
 session_start();
 
-// Periksa apakah pengguna sudah login atau belum, jika belum, redirect ke halaman login
+// Periksa apakah user sudah login atau belum, jika belum, redirect ke halaman login
 if (!isset($_SESSION['email'])) {
     header('Location: login.php');
     exit;
@@ -49,7 +49,7 @@ if (!isset($_SESSION['email'])) {
                     <img class="img-fluid pt-5 pb-3 text-center" src="img/avatar.svg" style="width: 200px; height: auto;" alt="" />
                 </div>
                 <h2 class="text-center">Fabian Greyson</h2>
-                <p class="text-center">fabiangreyson@gmail.com</p>
+                <p class="text-center"><?php echo $_SESSION['email'] ?></p>
                 <form method="post">
                     <div class="mb-4 mt-5">
                         <label for="fullname" class="form-label">Full Name</label>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['email'])) {
                     </div>
                     <div class="mb-4">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" value="fabiangreyson@gmail.com">
+                        <input type="email" class="form-control" id="email" value="<?php echo $_SESSION['email'] ?>">
                     </div>
                     <div class="mb-4">
                         <label for="phonenumber" class="form-label">Phone Number</label>
@@ -74,16 +74,16 @@ if (!isset($_SESSION['email'])) {
                             <option value="1">Indonesia</option>
                         </select>
                         <div class="text-center px-5">
-                            <button class="btn btn-primary rounded-pill form-control mt-5 mb-4">Save changes</button> 
+                            <button class="btn btn-primary rounded-pill form-control mt-5 mb-4">Save changes</button>
                         </div>
                         <div class="text-center px-5">
-                            <button class="btn btn-primary rounded-pill form-control" type="submit" name="logout" >Logout</button> 
+                            <button class="btn btn-primary rounded-pill form-control" type="submit" name="logout">Logout</button>
                         </div>
                     </div>
                 </form>
                 <?php
-                if(isset($_POST['logout'])){
-                    $_SESSION= [];
+                if (isset($_POST['logout'])) {
+                    $_SESSION = [];
                     session_unset();
                     session_destroy();
                     header("Location: login.php");
